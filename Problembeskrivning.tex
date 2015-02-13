@@ -1,0 +1,55 @@
+\section{Problembeskrivning}
+
+% \textit{Vi begränsar oss till aktiemarknaden där klassiska modeller förutsätter att aktiekurser i huvudsak följer en slumpvandring, vilket ger upphov till en normalfördelning av kursförändringarna. Det har visat sig att i den verkliga utvecklingen av aktiekurser är det betydligt vanligare med stora fluktuationer än förväntad från en normalfördelning. En metod som använts (inom området som kallats Econophysics) är agentbaserad modellering, där enkla beteenden hos samverkande individer på mikronivå kan ge upphov till komplexa fenomen på makronivå. Här kan t.ex. gruppbeteenden ge stora prisfluktuationer.}
+
+Vi vill med detta kandidatarbete kunna analysera och dra slutsatser av beteende på aktiemarknaden för att möjligen kunna förutse olika händelser på marknaden. Klassisk finansiell matematik har modeller av aktiemarknaden (ex Black-Scholes) där kursen drivs av en Brownsk rörelse. Dessa modeller brister då det har observerats att det uppstår förändringar i marknadsvärdet med stora avvikelser mer frekvent än vad som förutspås av den normalfördelade modellen. Förhoppningen är att agentbaserad modellering med gruppbeteenden på mikronivån kan generera stora fluktuationer på makronivån. Drivkraften till ett sådant gruppbeteende är ett minoritetsspel.
+
+\subsection{Minoritetsspel}
+För att kunna utföra den här uppgiften behöver vi vara bekanta med det så kallade minoritetsspelet som går till på följande sätt: vid spelets början finns det $N$ st agenter, varje omgång väljer dessa agenter, oberoende av varandra, 1 eller 0. Gruppen som vinner är den som hamnar i minoritet. För att välja grupp har varje agent $s$ stycken olika strategier som talar om vilken grupp agenten ska välja beroende på de senaste $m$ utfallen. Mellan varje omgång delas poäng ut till de agenter som varit i minoritetsgruppen samt till de strategier som förutspått utfallet, oavsett om agenten valde den strategin eller ej. Agenterna väljer alltid den strategi med högst totalpoäng 
+
+Denna enkla modell kan kopplas samman med en faktisk aktiemarknad om vi föreställer oss att de olika valen representerar köpa respektive sälja och vi tittar på storleken av minoritetsgruppen för varje tidssteg som ett sorts mått på vilka priser som skulle kunna uppstå. Det finns också en mer avancerad modell av minoritetsspelet som tillåter ett tredje val för agenterna som istället beror på hur framgångsrika dess strategier varit. Om denna tredje grupp räknas bort ifrån det totala antalet agenter så skapas en marknad där antalet agenter varierar mellan de olika tidsstegen och på så sätt simulerar en marknad där aktörer väljer att varken köpa eller sälja. 
+
+ %Detta kommer vara vår grundtanke med denna studie. Vi kommer därefter vilja modifiera denna idé och komplettera med egenskaper för våra agenter. För att göra vår modell så lik verkligheten som möjligt och kunna utläsa händelser ur vår modell och möjligen jämföra den med verkligheten.
+
+Här är vi intresserade av att skapa en sådan modell för att kunna extrahera data för att sedan jämföra med verkliga data och på så sätt se om det med hjälp av en sådan modell går att skapa simuleringar som kan förutsäga kommande utfall av marknaden. Men till detta syfte krävs det noga övervägande av vilka metoder som används för att styra agenternas handlande i modellen. %För att kunna göra detta krävs det att de delar som skiljer ett minoritetsspel från en verklig marknad övervägs noga.
+\subsection{Intressanta aspekter}
+
+För att skapa en modell av den kaliber som beskrivs i slutet av föregående sektion krävs mycket noga övervägande över på vilket sätt varje strategi poängsätts och värderas av agenterna. I verkligheten styrs aktörerna av hur mycket pengar de tjänar på sitt agerande. Om priset på en aktie är hög är det större chans att aktörerna vill sälja men mindre chans att de vill köpa och vice versa. Enligt detta kriterie är det viktigt att poängsättningen sker proportionellt mot den avtagande storleken på minoritetsgruppen. 
+
+En annan viktig egenskap för systemet är hur verkställanden av vilka agenter som ska avstå hanteras. Det finns modeller där strategierna förutom att tilldelas poäng för framgångsrikt resultat också subtraheras poäng för när de är felaktiga och agenterna antas då avstå när ingen av deras strategier har tillräckligt höga poäng. Detta är då i kontrast till hur aktieägare/aktieköpare förväntas väga sina beslut på hur mycket en aktie beräknas vara värd vilket snarare skulle kunna modelleras som ett globalt pris som beräknas utifrån proportionerna mellan de olika grupperna.
+
+Vidare så kräver en verklig marknad att agenten tidigare har köpt en aktie för att sedan kunna sälja den samt att det finns en villig köpare för varje säljare men i den här modellen antas alla agenter kunna handla som de vill. Vilket i verkligheten skulle innebära ett obegränsat antal aktier och därför skulle det vara av intresse att på något sätt införa en begränsning av handlandet vilket också skulle påverka priset som föreslogs i föregående stycke. 
+
+Det skulle också vara intressant att försöka variera de olika agenternas egenskaper för att se om det går att dra fördel av att ha en annan längd på minnet eller ett annat antal strategier jämtemot de andra agenterna. Och på så sätt försöka finna en ultimat algoritm för hur en agents beslut ska tas i spelet. Detta vore dock inte direkt tillämpbart på en verklig marknad eftersom det skulle kräva vetskap av alla andra aktörers strategier. %kolla närmare på hur systemet påverkas av att agenter kan se olika långt bak i historien. Det finns flera sätt att ställa upp detta, både med att någon enstaka agent har längre/kortare minne än de andra eller om alla agenter har en slumpmässig längd på minnet för att se om någon och i så fall vilken part som skulle ha fördel av detta. 
+
+%En stor skillnad är att agenterna här baserar sina val beroende på förutbestämda strategier medan verkliga aktörer kan tänkas basera sina val på ett aktivt medvetande som har möjlighet att överväga flera olika typer av information som till exempel vad den tror att andra aktörer kommer att göra i nästa steg vilket den här modellen bortser ifrån. 
+
+%Till skillnad från en faktiskt marknad så saknas alternativet att avstå från aktion. Genom att lägga till något som representerar det alternativet skapas vad som kallas för ett storkanoniskt minoritetsspel där antalet agenter eller aktörer på marknaden kan variera för varje tidssteg. Denna modell kräver betydligt mer av systemet i och med att varje agent då måste ha någon form utav medvetande som talar om att nu är det inte lämpligt att agera vilket kan bero på flera olika saker. På en riktig marknad skulle det kunna ses som att agenten inte är intresserad av att agera då denne inte tjänar tillräckligt mycket på det. Detta kan modelleras med hjälp av en prissättning som är invers proportionell mot minoritetsgruppens storlek eller genom att agenter helt enkelt avstår om ingen av dess strategier har tillräckligt bra poäng. 
+
+%  En annan möjlig parameter att ändra på är att de får valmöjlighet att inte delta om deras strategier historiskt sett har gett låg avkastning. Vid denna tillämpning, då antalet agenter varierar i spelet, kallas det för ett storkanonisk minoritetsspel. Då strategier får virtuella poäng även om dem inte används så kan en avstående agent alltid återvända till marknaden i framtiden om dess strategiers poäng förbättras. Det skulle även vara intressant att koppla vår modell till prissättning och att priset ändras när agenterna väljer att köpa/sälja. Agenterna skulle också kunna agera olika beroende på hur mycket pengar de har och vad priset för den underliggande tillgången är. Detta för att kunna koppla det till den verkliga marknaden.
+
+% Det skulle vara intressant att ta hänsyn till att för en aktör ska kunna köpa måste en annan sälja. Även att ta i beaktning vad priset för köparen skulle vara. Ytterligare steg här skulle kunna vara att en agent då kan hålla en position under flera tidssteg. Det skulle vara väldigt omfattande för oss att tillämpa detta i vår modell. Därför ser vi detta som en avgränsning och istället något vi kan spåna vidare på vid tid över.
+
+\subsection{Analys}
+
+Simuleringar kommer påvisa makroskopiska effekter som i teorin kommer kunna jämföras med beteendet hos verkliga marknader. Genom att ändra modellen på mikronivå kan vi analysera hur dessa makroeffekter styrs av modellens parametrar.  
+
+
+
+%Genom att extrahera och analysera data ifrån simuleringar av minoritetsspelet så är det möjligt att observera olika fysikaliska(?) fenomen. %Identifikation av sådana fenomen gör det möjligt att utläsa mer om systemets egenskaper och beteenden. Så kan analysen av dessa data hjälpa %förståelsen för inte bara systemets utan även den faktiska aktiemarknadens uppförande. 
+
+ %istället för “är det möjligt att observera…” kanske “är målet att kunna få förståelse för verkliga marknadsfenomen"
+
+%Den teoretiska delen av arbetet består av att 
+Det är också av intresse att analytiskt undersöka modellen i ett försök att förstå vad som faktiskt driver processerna. Till exempel bör vi undersöka den periodicitet som uppkommer för ett minoritetsspel. Då agenterna spelar så kommer vissa strategier ge upphov till kedjor som återkommer. Dessa kedjor kan visuellt analyseras med hjälp av en De Bruijn-graf \cite{Periodicity}. Detta gör det även möjligt att studera metastrategier under spelets gång. Metastrategier är skilda från upprepade strategivinster genom att de förra försöker analysera tidigare agenters strategi (nuvarande paradigmet) för att få ett övertag. Det kräver då ett längre minne av agenten för att man ska kunna se periodcykler som visas av De Bruijn-grafen.
+
+% ERSÄTT SOURCE http://en.wikipedia.org/wiki/De_Bruijn_graph
+
+
+
+
+% startvärde, antal agenter, historia längd
+
+% vad vill vi likna, ekonomi fysik
+
+

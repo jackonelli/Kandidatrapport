@@ -1,0 +1,24 @@
+\section{Metod}
+
+% \textit{Programmera (förslagsvis i Matlab) agentbaserad aktiehandel samt analysera det statistiska utfallet. Eventuellt köra simuleringarna på kluster (C3SE). Jämföra med empirisk data. Studera olika nivåer av komplexitet i agenternas modus operandi och hur det påverkar utfallet. Som förlängning eventuellt koppla till modellering av prissättning av optioner och hur denna avviker från standardmodellen (Black-Scholes) baserad på normalfördelade prisfluktuationer med konstant varians.}
+
+%Bra metod! Vad tror du om en sådan här subsection-uppdelning för att få in något om skrivandet, Sebastian? Jag lägger in det på prov /Jakob
+\subsection{Modellering}
+%Jag tänker mig att vi kanske ska ha något om hur arbetet med modellen konkret ska delas upp./ Jakob 
+Till att börja med kommer vi studera rapporter inom ämnet för att hitta information om hur minoritetsspelets grunder samt hur det fungerar. Men också vad forskare tidigare har gjort och kommit fram till. Dels för att se om vi kan återskapa deras tidigare resultat med hjälp av vår egna kod och dels för att få en riktlinje till hur vi kan implementera vår egen specifika modell av agenternas interaktion. För att smidigast kunna hantera de data som vi vill få fram kommer tillämpningen av modellen att ske i Matlab. Det ursprungliga minoritetsspelet kommer vara grunden i vår modell, sedan kommer vi successivt lägga till funktioner och egenskaper till den agentbaserade modelleringen för att först skapa en storkanonisk modell och sedan vår helt egen. Till exempel volym/likviditet, riktpris, metastrategier (dvs. ett medvetande om att historiken är periodisk) som kommer hjälpa oss analysera resultaten i form av vinnande agent, vinstperioder av strategier och periodtid.
+
+En matematisk analys kommer också att göras för att få en teoretisk bakgrund till grundläggande koncept såsom förutsägbarhet och statistiska fördelningar men också mer fundamentala egenskaper ex. periodiciteten i historiken och avstånd i strategirummet. 
+
+Följaktningsvis vill vi utveckla vår modell för att kunna lägga till olika beteenden till våra spelande agenter. Detta kommer ge oss många olika modeller och ett stort parameterrum som vi kanske kommer behöva köra på C3SE-klustret. Eftersom vi då kan köra flera %olika iterationer samtidigt och få mycket data kan vi senare med bra underliggande data ändra, korrigera och dra slutsatser om vår modell.
+%Förslag på ändring: Nedanstående ersätter det bortkomment./Jakob
+olika simuleringar för att dels kunna isolera enskilda parametrar och dels för att kunna få bra statistisk data.
+
+%Jag lägger till någon bullshit här om skrivandeprocesser för att få ner Swenson i brygga. Det är verkligen bara ett utkast./Jakob
+%Äh, det lutar nog att jag tar bort den här skiten nedan.
+\subsection{Skrivande}
+Rapporten är viktad som den enskilt viktigaste delen i arbetet och därför måste vi ha en klar bild av hur skrivandet ska gå till. Till att börja med startar vi skrivandet tidigt under arbetet, se tidsplanen. Redan nu i planeringsrapporten ställer vi upp klara syften och frågeställningar, genom att tidigt börja utreda dem bygger vi organiskt den struktur som den slutliga rapporten kommer ha. Revision av texten efter varje avslutat moment kommer ge ett iterativt skrivande och skapa en naturlig känsla för vad som faktiskt platsar i slutresultatet. 
+Det kräver mycket av oss att börja skriva innan modelleringsarbetet är avslutat men det kommer vara en stor fördel att tidigt ha en fullständigt utkast att arbeta med. Vi kan individuellt ha större ansvar för olika delar av texten under förutsättning att det kontinuerligt sker en kollektiv granskning av materialet. Dessutom tänker vi anstränga oss för att maximalt utnyttja handledningen från fackspråk genom att under skrivandet samla på oss tankar och frågor.
+%Ska vi ta med detta? 
+%(Omformulera) Detta kommer också vare en av grundstenarna i våra redovisning då vi ska visa vad vi har gjort.
+
+

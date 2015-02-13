@@ -1,0 +1,32 @@
+\section{Bakgrund}
+
+% \textit{"Finanskrisen 2007-2008 och det faktum att den inte förutsågs och begränsades visade tydligt svagheten hos ekonomiska standardmodeller. Dessa är baserade på rationella välinformerade aktörer som gör att marknaden aldrig avviker långt från jämvikt, medan verkligheten innehåller komplikationer såsom nätverk av sammankopplade strukturer, begränsad information, positiva återkopplingsmekanismer och flockbeteenden." Text från Kandidatkatalogen för Teknisk Fysik 2015}
+
+Grupper av individer tenderar klumpa ihop sig och ta beslut i flock. Sådana beslut baseras alltid på någon form av strategi som svar på given information. En strategi värderas efter dess förmåga att förutsäga rätt beslut, alltså det beslut som genererar mest värde. 
+
+Det här kandidatarbetet modellerar en grupp individer som utgör ett slutet system där utfallet av varje enskild aktörs beslut bestäms av gruppens kollektiva beslut, helt isolerat från yttre faktorer.
+
+Ett sådant system ger naturligt upphov till en växelverkan mellan olika strategier och vars dynamik är mer komplex än vad man väntar sig av ett så simpelt system.
+
+\subsection{El Farol Bar-problemet}
+
+1994 formulerade W. Brian Arthur El Farol Bar-problemet för att illustrera förloppet. Det är också detta problemet som ligger till grund för modellen i detta kandidatarbete:
+
+Alla invånare i en småstad är sugna på att gå till lokala El Farol Bar. Problemet är bara att baren är så liten att man inte har roligt om, säg fler än 60\%, går dit samma kväll. Varje dag måste invånarna utan att kommunicera med varandra ta ett beslut huruvida de ska gå dit eller inte. Invånarna baserar sina strategier på att de får veta vilket beslut som varit gynnsamt för ett bestämt antal kvällar tillbaka, en historik. Sedan verkställs besluten, det fördelaktiga beslutet uppdateras i historiken och en ny runda av spelet börjar.
+
+Det intressanta med problemet är att det givet en godtycklig historik inte finns någon globalt optimal strategi. Om det skulle finnas en sådan skulle alla välja den, fler än 60\% skulle gå till baren och samtliga skulle bli missnöjda. Avsaknaden av ett jämviktsläge där alla invånare är nöjda ger upphov till en mycket intressant dynamik trots spelets mycket enkla regler.
+
+\subsection{Agentbaserad modellering: Makro från mikro}
+Att komplexa system kan beskrivas fullt av sina minsta beståndsdelar är en tilltalande idé. Genom att reducera komplicerade förlopp till interaktioner mellan beståndsdelar \textit{agenter}, som ges enkla egenskaper kan hela systemet modelleras medelst simulering. Detta är fundamentet i den agentbaserade modelleringen.
+
+Fördelarna är många jämfört med den klassiska makroskopiska modellen; agenterna har individuellt mycket enkla egenskaper och systemet påverkas snarare av hur de växelverkar. Komplexiteten begränsas alltså inte av analytiska metoder utan av datorkraft. I modellens enkelhet ligger dessutom en möjlighet att identifiera vilka basala parametrar som faktiskt styr systemets dynamik och med den statistiska fysikens verktyg kan de till och med förklaras analytiskt.
+
+Agentbaserad modellering har väckt en del uppmärksamhet de senaste tio åren och har tillämpats i vitt skilda användningsområden, just för att den gör mycket komplexa system hanterbara. Till exempel används den inom den statistiska fysiken för att modellera spin-glas-tillstånd men också inom finansiell matematik vilket är fokuspunkten för det här kandidatarbetet.
+
+\subsection{Matematiska och ekonomiska modeller}
+
+Matematiska modeller av finansmarknader är ett instrument med vilket man dels värderar olika derivat men också använder till att förutsäga kursrörelser. Klassiska modeller så som Black-Scholes är bundna till antagandet om att kursrörelser drivs av en brownsk (normalfördelad) rörelse. Detta trots att faktisk finansiell data uppvisar fluktuationer som är större än en normalfördelning tillåter, Challet et al\cite{AnomalousFluctuations}. 
+
+Rådande ekonomiska teorier bygger på antagandet att alla agenter är välinformerade och tar fullt rationella beslut, då dessa verkar på en marknad utan yttre störningar återvänder marknaden alltid till en jämvikt\cite{NeoClassicalEconomics}.
+
+Agentbaserad modellering begränsas inte av brownsk rörelse och normalfördelning och har en principiell skillnad gentemot övriga ekonomiska teorier i det att agenterna varken är helt rationella eller perfekt informerade. De tar sina beslut baserade på en uppsättning strategier utifrån en begränsad tillgång till historik. Växelverkan mellan dessa strategier skapar flockbeteenden och bubblor, fenomen som uppkommer på riktiga marknader.

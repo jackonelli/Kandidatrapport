@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{authblk}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{color}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage[nottoc]{tocbibind}
+\usepackage[swedish]{babel}
+
+\newenvironment{utkast}
+{\color{red}} %Är din text preliminär infoga den i 
+%\begin{utkast}
+%TEXT
+%\end{utkast}
+%så ser alla att det stycket är just ett utkast. /Jakob
+
+%\title{Planeringsrapport}
+%\author{}
+%\date{\today}
+
+\begin{document}
+
+\input{./title.tex}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\setcounter{page}{1}
+\input{Bakgrund.tex}
+% Saker vi borde ha med som vi inte hade i plan.-rapport.:
+%Stylized facts vad det nu kan vara.
+
+\input{Syfte.tex}
+
+\input{Problembeskrivning.tex}
+
+\input{Metod.tex}
+
+%Latex-Gant
+\input{Tidsplan}
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{Referenser}
+\end{document}
